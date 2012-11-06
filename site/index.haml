@@ -1,0 +1,36 @@
+title: "mips2machine: Compiler for CSCE2214's x86 CPU"
+---
+- content_for :head do
+  != style_tag 'css/style.css'
+
+%nav#tabs
+  %ul
+    %li
+      %a.mips2machine.active{:href => "#mips2machine"}!= "MIPS &rarr; Machine"
+    %li
+      %a.machine2mips{:href => "#machine2mips"}!= "Machine &rarr; MIPS"
+
+#editors
+  %form#mips2machine
+    .error.hide#mips2machine_error
+    %pre.editor.left#mips2machine_editor
+    %pre.output.right#mips2machine_output
+
+  %form#machine2mips.hide
+    .error.hide#machine2mips_error
+    %pre.editor.left#machine2mips_editor
+    %pre.output.right#machine2mips_output
+
+%script{type: 'text/javascript', charset: 'utf-8', src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'}
+
+!= script_tag 'scripts/underscore.min.js'
+!= script_tag 'scripts/coffeescript.min.js'
+!= script_tag 'scripts/js2coffee.js'
+!= script_tag 'scripts/ace/ace.js'
+!= script_tag 'scripts/ace/mode-coffee.js'
+!= script_tag 'scripts/ace/mode-javascript.js'
+!= script_tag 'scripts/ace/theme-clouds.js'
+!= script_tag 'scripts/script.js'
+!= script_tag 'scripts/helpers.js'
+
+!= "<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>"

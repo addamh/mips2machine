@@ -1,0 +1,35 @@
+!!! 5
+%html
+  %head
+    %title= page.title
+
+    %meta(charset='UTF-8')
+    -# Use the latest IE engine, or Chrome frame.
+    %meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+
+    -# Mobile viewport optimization. j.mp/bplateviewport
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+    -# Standard SEO meta
+    - if meta.keywords?
+      %meta{:name => 'keywords', :content => meta.keywords}
+    - if meta.description?
+      %meta{:name => 'description', :content => meta.description}
+
+    != yield_content :head
+
+  %body
+    #all
+      != yield
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25112723-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
