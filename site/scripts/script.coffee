@@ -74,9 +74,9 @@ activate_mips2machine = ->
     input = editor.getSession().getValue()
 
     try
-      #out = Js2coffee.build(input)
+      out = Mips2machine.build(input)
       $("#mips2machine .error").hide()
-      #output.getSession().setValue out
+      output.getSession().setValue out
 
     catch e
       $("#mips2machine .error").html "#{e}"
@@ -101,9 +101,9 @@ activate_machine2mips = ->
     input = editor.getSession().getValue()
 
     try
-      #out = CoffeeScript.compile(input, bare: "on")
+      out = Mips2machine.build(input)
       $("#machine2mips .error").hide()
-      #output.getSession().setValue out
+      output.getSession().setValue out
 
     catch e
       $("#machine2mips .error").html "#{e}"
