@@ -41,16 +41,17 @@ randomFrom = (arr) ->
 # Makes an Ace field out of a given <pre> ID.
 #
 activate = (id, options) ->
+
   editor = ace.edit(id)
   s = editor.getSession()
 
   editor.setTheme "ace/theme/clouds"
 
-  if options.type == "javascript"
+  if options.type == "mips"
     JavaScriptMode = require("ace/mode/javascript").Mode
     editor.getSession().setMode new JavaScriptMode()
 
-  else if options.type == "coffeescript"
+  else if options.type == "machine"
     CoffeeMode = require("ace/mode/coffee").Mode
     editor.getSession().setMode new CoffeeMode()
 
@@ -67,8 +68,8 @@ activate = (id, options) ->
   editor
 
 activate_mips2machine = ->
-  editor = activate("mips2machine_editor", type: "javascript")
-  output = activate("mips2machine_output", type: "coffeescript", tabSize: 2, noActiveLine: true)
+  editor = activate("mips2machine_editor", type: "mips")
+  output = activate("mips2machine_output", type: "machine", tabSize: 2, noActiveLine: true)
 
   onchange = ->
     input = editor.getSession().getValue()
@@ -94,8 +95,8 @@ activate_machine2mips = ->
 
   coffeejs_is_active = true
 
-  editor = activate("machine2mips_editor", type: "coffeescript", tabSize: 2)
-  output = activate("machine2mips_output", type: "javascript", noActiveLine: true)
+  editor = activate("machine2mips_editor", type: "machine", tabSize: 2)
+  output = activate("machine2mips_output", type: "mips", noActiveLine: true)
 
   onchange = ->
     input = editor.getSession().getValue()

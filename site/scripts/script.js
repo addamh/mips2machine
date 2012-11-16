@@ -15,10 +15,10 @@
     editor = ace.edit(id);
     s = editor.getSession();
     editor.setTheme("ace/theme/clouds");
-    if (options.type === "javascript") {
+    if (options.type === "mips") {
       JavaScriptMode = require("ace/mode/javascript").Mode;
       editor.getSession().setMode(new JavaScriptMode());
-    } else if (options.type === "coffeescript") {
+    } else if (options.type === "machine") {
       CoffeeMode = require("ace/mode/coffee").Mode;
       editor.getSession().setMode(new CoffeeMode());
     }
@@ -39,10 +39,10 @@
   activate_mips2machine = function() {
     var editor, onchange, output;
     editor = activate("mips2machine_editor", {
-      type: "javascript"
+      type: "mips"
     });
     output = activate("mips2machine_output", {
-      type: "coffeescript",
+      type: "machine",
       tabSize: 2,
       noActiveLine: true
     });
@@ -72,11 +72,11 @@
     }
     coffeejs_is_active = true;
     editor = activate("machine2mips_editor", {
-      type: "coffeescript",
+      type: "machine",
       tabSize: 2
     });
     output = activate("machine2mips_output", {
-      type: "javascript",
+      type: "mips",
       noActiveLine: true
     });
     onchange = function() {
