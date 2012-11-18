@@ -155,7 +155,7 @@ buildMachine = function(str, opts) {
   var line_count = output_string.split(/\r\n|\r|\n/).length
 
   if(line_count < 258){
-    var remainder = 257 - line_count;
+    var remainder = 258 - line_count;
     for(i = 0; i <= remainder; i++){
       output_string = output_string + "00000000\n";
     }

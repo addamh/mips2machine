@@ -48,8 +48,8 @@ activate = (id, options) ->
   editor.setTheme "ace/theme/clouds"
 
   if options.type == "mips"
-    JavaScriptMode = require("ace/mode/javascript").Mode
-    editor.getSession().setMode new JavaScriptMode()
+    #JavaScriptMode = require("ace/mode/javascript").Mode
+    #editor.getSession().setMode new JavaScriptMode()
 
   else if options.type == "machine"
     CoffeeMode = require("ace/mode/coffee").Mode
@@ -60,7 +60,7 @@ activate = (id, options) ->
 
   editor.renderer.setShowPrintMargin false
   editor.renderer.setHScrollBarAlwaysVisible false
-  editor.renderer.setShowGutter false
+  editor.renderer.setShowGutter true
 
   editor.setReadOnly true  if options.readonly
   editor.setHighlightActiveLine false  if options.noActiveLine

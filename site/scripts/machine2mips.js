@@ -3,10 +3,6 @@ var Builder, Code, Node, Transformer, Typenames, Types, UnsupportedError, blockT
   __slice = [].slice,
   __hasProp = {}.hasOwnProperty;
 
-parser = (this.Narcissus || require('./narcissus_packed')).parser;
-
-_ = this._ || require('underscore');
-
 buildMips = function(str, opts) {
   return "SHIT MIPS";
 };
