@@ -42,7 +42,8 @@ body, h1, h2, h3, h4, h5, h6, td
   overflow: hidden
   margin-top: 20px
   margin-left: 40px
-
+  margin-right: 29px
+  
   ul
     +horiz-list
 
@@ -134,19 +135,12 @@ body, h1, h2, h3, h4, h5, h6, td
     
 // ============================================================================
 
-p.more-info
-  margin: 0 0 20px 0
-  padding: 0
-  text-align: center
-
+li.more-info
+  float: right !important
   a
-    display: inline-block
-    background: rgba(black, 0.5)
-    +border-bottom-radius(4px)
-
+    background: rgba($orange, 0.7) !important
     font-family: lato, sans-serif
     text-transform: uppercase
-    letter-spacing: 3px
     font-size: 7pt
     font-weight: normal
 
@@ -154,10 +148,6 @@ p.more-info
     text-shadow: 1px 1px 0 rgba(black, 0.3)
 
     padding: 5px 30px
-
-    &:hover
-      background: rgba($orange, 0.7)
-      color: white
 
 // ============================================================================
 
@@ -184,19 +174,6 @@ p.more-info
     padding: 0
     text-align: right
     font-size: 45px
-
-  // Logo band
-  .logo
-    margin: 90px 0 0 0
-    height: 70px
-    background: #eceae6
-    border-top: solid 2px #253a3a
-    border-bottom: solid 2px #253a3a
-    text-align: center
-
-    img
-      position: relative
-      top: -63px
 
   code
     background: rgba(#fafafa, 0.2)
@@ -235,3 +212,6 @@ p.more-info
     text-align: right 
     letter-spacing: 1px 
     font-size: 9pt
+
+#li.more-info
+  float: right

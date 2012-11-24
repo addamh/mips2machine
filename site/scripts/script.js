@@ -95,7 +95,7 @@
     return onchange();
   };
 
-  $("#tabs a").live("click", function() {
+  $("#tabs a.tab").live("click", function() {
     var $form, target;
     target = $(this).attr("href").substr(1);
     $form = $("form#" + target);
@@ -105,7 +105,7 @@
       activate_machine2mips();
     }
     $("#" + target + " .editor textarea").focus();
-    $("#tabs a").removeClass("active");
+    $("#tabs a.tab").removeClass("active");
     $(this).addClass("active");
     return false;
   });
@@ -124,9 +124,9 @@
     });
   });
 
-  $("p.more-info a").live('click', function() {
+  $("li.more-info a").live('click', function() {
     $("body").animate({
-      scrollTop: $("#info").offset().top - 10
+      scrollTop: $("#app_info").offset().top - 10
     }, 1000);
     return false;
   });

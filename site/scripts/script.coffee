@@ -117,7 +117,7 @@ activate_machine2mips = ->
 
 # Tab switcher
 #
-$("#tabs a").live "click", ->
+$("#tabs a.tab").live "click", ->
   target = $(this).attr("href").substr(1)
   $form  = $("form#" + target)
 
@@ -130,7 +130,7 @@ $("#tabs a").live "click", ->
   $("##{target} .editor textarea").focus()
 
   # Activate the tab button
-  $("#tabs a").removeClass "active"
+  $("#tabs a.tab").removeClass "active"
   $(this).addClass "active"
 
   false
@@ -144,8 +144,8 @@ $(window).resize ->
   $("#editors form").css height: h
 
 # The "more info" button
-$("p.more-info a").live 'click', ->
-  $("body").animate scrollTop: ($("#info").offset().top - 10), 1000
+$("li.more-info a").live 'click', ->
+  $("body").animate scrollTop: ($("#app_info").offset().top - 10), 1000
 
   false
 
