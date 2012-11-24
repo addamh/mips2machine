@@ -2,3 +2,4 @@ output
 .env
 .sass-cache
 .DS_Store
+npm-debug.log

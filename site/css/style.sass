@@ -162,7 +162,6 @@ p.more-info
 // ============================================================================
 
 #info
-  background: $brown url(/images/bg-brown.jpg)
   margin: 0 0 0 0
   overflow: hidden
   position: relative
@@ -179,11 +178,12 @@ p.more-info
 
   // Top band
   h2
-    height: 66px
-    text-indent: -9999px
-    background: url(/images/h1.png) center 0 no-repeat
-    margin: 50px 0
+    height: 35px
+    font-family: lato
+    margin: 20px 30px
     padding: 0
+    text-align: right
+    font-size: 45px
 
   // Logo band
   .logo
@@ -198,43 +198,6 @@ p.more-info
       position: relative
       top: -63px
 
-  article
-    background: url(/images/bg-blue.jpg)
-    padding: 20px
-    padding-top: 80px
-
-    >.c
-      width: 400px
-      padding-left: 200px
-      margin: 0 auto
-
-  h3
-    margin: 0
-    padding: 0
-    margin-left: -200px
-    margin-top: 28px
-    width: 170px
-    float: left
-    color: $orange
-    text-transform: uppercase
-    font-family: lato
-    text-align: right
-    letter-spacing: 1px
-    font-size: 9pt
-
-  h3:first-child
-    margin-top: 0
-
-  h3+p
-    margin-top: 40px
-
-  h4
-    color: #999
-    border-top: solid 1px #ddd
-    padding-top: 20px
-    margin-top: 20px
-    font-size: 1em
-
   code
     background: rgba(#fafafa, 0.2)
     border: solid 1px rgba(#ddd, 0.2)
@@ -242,17 +205,33 @@ p.more-info
 
 // ============================================================================
 
-a.github
-  background:
-    //image: url(https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67)
-    image: url(https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67)
-    position: 0 0
-    repeat: no-repeat
-  display: block
-  width: 150px
-  height: 150px
-  overflow: hidden
-  position: absolute
-  text-indent: -9999px
-  right: 0
-  top: -20px
+#app_info 
+  color: white
+  margin: 50px 90px 10px 90px
+  font-size: 14px
+  
+#contact 
+  margin-bottom: 100px
+  float: right
+  margin-right: 110px
+  color: white
+  font-size: 22px
+  width: 125px
+  h3.right
+    float: right
+  h3.left
+    border-right: 1px solid rgba(255, 255, 255, 0.5)
+    padding-right: 10px
+  h3  
+    margin: 0 
+    padding: 0 
+    margin-left: -200px 
+    margin-top: 28px 
+    width: 170px 
+    float: left 
+    color: #d77d2d 
+    text-transform: uppercase 
+    font-family: lato 
+    text-align: right 
+    letter-spacing: 1px 
+    font-size: 9pt
