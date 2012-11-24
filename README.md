@@ -1,8 +1,7 @@
 # MIPS2Machine
 
 ## Diagram of CPU
-
-
+![Alt text](https://raw.github.com/addamh/mips2machine/master/images/diagram.png)
 ## Instruction Set Architecture (ISA)
 <table>
 <tr><td style="background-color:#000; color: #FFF;">Instruction</td><td style="background-color:#000; color: #FFF;">Description</td><td style="background-color:#000; color: #FFF;">Opcode (15:12)</td><td style="background-color:#000; color: #FFF;">Rd
