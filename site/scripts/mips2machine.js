@@ -3,8 +3,7 @@ var UnsupportedError, buildMachine, exports,  _;
 _ = this._ || require('underscore');
 
 buildMachine = function(str, opts) {
-  
-  window.shit = str;
+
   var input_array = str.split("\n");
   var command_array = [];
   var output_string = "";
@@ -29,11 +28,10 @@ buildMachine = function(str, opts) {
     command_array.push(value)
   });
   
-  
   $.each(command_array, function(index, value) {
     pieces = value.split(" ");
     pattern = /^\$|^R|^r/g;
-    
+    console.log(value);
     if(value === "nop"){ 
       output_string = output_string + "00000000\n00000000\n"; 
     }
@@ -147,6 +145,16 @@ buildMachine = function(str, opts) {
       rt_bin = window.helpers.pad(window.helpers.Dec2Bin(rt), 4)
 
       bin_command = ""+rs_bin+rt_bin+"\n"+op_bin+rd_bin+"\n";
+
+      output_string = output_string + bin_command;
+    } else if(pieces.length == 2){ 
+
+      op = pieces[0];
+      address = parseInt(pieces[1]);
+      op_bin = window.helpers.pad(window.helpers.Hex2Bin(map[op]), 4);
+      address_bin = window.helpers.pad(window.helpers.Dec2Bin(address), 4);
+      
+      bin_command = "0000"+address_bin+"\n"+op_bin+"0000\n";
 
       output_string = output_string + bin_command;
     }

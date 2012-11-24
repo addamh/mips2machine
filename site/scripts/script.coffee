@@ -5,12 +5,23 @@ samples =
 
     add $1, $2, $3
     slt $2, $2, $2
+    nop
+    bne r1, r1, 7
+    bne r0, r1, 2
+    nop
+    nop
+    add r9, r9, r9
+    jmp 8
+    nop
+    add r10, r10, r10
+    bne r0, r1, 2
+    nop
     
     """
   ]
   coffee: [
     """
-    # Type here!
+    /* Type here! */
 
     00000101
     01000011
@@ -85,15 +96,15 @@ activate_mips2machine = ->
 
   editor.getSession().on "change", onchange
   editor.getSession().setValue randomFrom(samples.js)
-
+  
   onchange()
 
-coffeejs_is_active = false
+machinemips_is_active= false
 
 activate_machine2mips = ->
-  return  if coffeejs_is_active
+  return  if machinemips_is_active
 
-  coffeejs_is_active = true
+  machinemips_is_active= true
 
   editor = activate("machine2mips_editor", type: "machine", tabSize: 2)
   output = activate("machine2mips_output", type: "mips", noActiveLine: true)
@@ -102,7 +113,7 @@ activate_machine2mips = ->
     input = editor.getSession().getValue()
 
     try
-      out = Mips2machine.build(input)
+      out = Machine2mips.build(input)
       $("#machine2mips .error").hide()
       output.getSession().setValue out
 

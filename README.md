@@ -1,6 +1,6 @@
 # MIPS2Machine - [http://mips2machine.herokuapp.com](http://mips2machine.herokuapp.com)
  
-  This app was developed because I was tired of hand compiling Assembly to machine code, for CSCE2214 at the University of Arkansas, and leaving it to chance to mess up. It was built over a few days in about 4-5 hours so there's definitely room for improvement and cleanup. I still have to implement the Machinecode &rarr; MIPS tab functionality, but the MIPS &rarr; Machinecode should be fully functional for the ISA given for the CPU. The app is a pure Javascript app built using the Proton framework. It also uses Coffeescript, HAML and SASS. Special thanks to js2coffee.org as I used their app as an template of functionality. 
+  This app was developed because I was tired of hand compiling Assembly to machine code, for CSCE2214 at the University of Arkansas, and leaving it to chance to mess up. It was built over a few days in about 4-5 hours so there's definitely room for improvement and cleanup. The compiler should be fully functional for the ISA given for the CPU. The app is a pure Javascript app built using the Proton framework. It also uses Coffeescript, HAML and SASS. Special thanks to js2coffee.org as I used their app as an template of functionality. 
 ## Diagram of CPU
 ![Alt text](https://raw.github.com/addamh/mips2machine/master/images/diagram.png)
 ## Instruction Set Architecture (ISA)

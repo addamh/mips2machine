@@ -1,9 +1,9 @@
 (function() {
-  var activate, activate_machine2mips, activate_mips2machine, coffeejs_is_active, randomFrom, samples;
+  var activate, activate_machine2mips, activate_mips2machine, machinemips_is_active, randomFrom, samples;
 
   samples = {
-    js: ["/* Type here! */\n\nadd $1, $2, $3\nslt $2, $2, $2\n"],
-    coffee: ["# Type here!\n\n00000101\n01000011\n00000010\n01000100\n00000000\n11000011\n00000100\n11000100\n00000100\n01000110\n01100000\n10000111\n00000000\n10001000\n01111000\n00001010\n00000110\n11001010\n00000000\n00000000"]
+    js: ["/* Type here! */\n\nadd $1, $2, $3\nslt $2, $2, $2\nnop\nbne r1, r1, 7\nbne r0, r1, 2\nnop\nnop\nadd r9, r9, r9\njmp 8\nnop\nadd r10, r10, r10\nbne r0, r1, 2\nnop\n"],
+    coffee: ["/* Type here! */\n\n00000101\n01000011\n00000010\n01000100\n00000000\n11000011\n00000100\n11000100\n00000100\n01000110\n01100000\n10000111\n00000000\n10001000\n01111000\n00001010\n00000110\n11001010\n00000000\n00000000"]
   };
 
   randomFrom = function(arr) {
@@ -62,14 +62,14 @@
     return onchange();
   };
 
-  coffeejs_is_active = false;
+  machinemips_is_active = false;
 
   activate_machine2mips = function() {
     var editor, onchange, output;
-    if (coffeejs_is_active) {
+    if (machinemips_is_active) {
       return;
     }
-    coffeejs_is_active = true;
+    machinemips_is_active = true;
     editor = activate("machine2mips_editor", {
       type: "machine",
       tabSize: 2
@@ -82,7 +82,7 @@
       var input, out;
       input = editor.getSession().getValue();
       try {
-        out = Mips2machine.build(input);
+        out = Machine2mips.build(input);
         $("#machine2mips .error").hide();
         return output.getSession().setValue(out);
       } catch (e) {
