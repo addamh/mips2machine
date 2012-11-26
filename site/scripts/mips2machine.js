@@ -98,6 +98,7 @@ buildMachine = function(str, opts) {
       }
       
       imm = parseInt(pieces[3]);
+      console.log("IMM: "+imm);
       if(imm % 1 != 0){
         throw new UnsupportedError(rt + " is not a number on " + value);
       }
@@ -152,9 +153,15 @@ buildMachine = function(str, opts) {
       op = pieces[0];
       address = parseInt(pieces[1]);
       op_bin = window.helpers.pad(window.helpers.Hex2Bin(map[op]), 4);
-      address_bin = window.helpers.pad(window.helpers.Dec2Bin(address), 4);
+      address_bin = window.helpers.pad(window.helpers.Dec2Bin(address), 12);
       
-      bin_command = "0000"+address_bin+"\n"+op_bin+"0000\n";
+      offset_1 = address_bin.substring(0,4);
+      offset_2 = address_bin.substring(4,8);
+      offset_3 = address_bin.substring(8,12);
+      console.log(offset_1);
+      console.log(offset_2);
+      console.log(offset_3);
+      bin_command = offset_2+offset_3+"\n"+op_bin+offset_1+"\n";
 
       output_string = output_string + bin_command;
     }

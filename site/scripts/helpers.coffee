@@ -4,7 +4,7 @@ Helpers = {}
 Helpers.checkBin = (n) ->
   /^[01]{1,64}$/.test n
 Helpers.checkDec = (n) ->
-  /^[0-9]{1,64}$/.test n
+  /^\-?[1-9]\d{0,2}$/.test n
 Helpers.checkHex = (n) ->
   /^[0-9A-Fa-f]{1,64}$/.test n
 Helpers.pad = (s, z) ->
@@ -16,7 +16,9 @@ Helpers.unpad = (s) ->
 
 #Decimal operations
 Helpers.Dec2Bin = (n) ->
-  return 0  if not Helpers.checkDec(n) or n < 0
+  return 0  if not Helpers.checkDec(n)
+  if(n < 0)
+    n = n & 0x0f
   n.toString 2
 Helpers.Dec2Hex = (n) ->
   return 0  if not Helpers.checkDec(n) or n < 0

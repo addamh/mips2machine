@@ -8,7 +8,7 @@
   };
 
   Helpers.checkDec = function(n) {
-    return /^[0-9]{1,64}$/.test(n);
+    return /^\-?[1-9]\d{0,2}$/.test(n);
   };
 
   Helpers.checkHex = function(n) {
@@ -30,8 +30,11 @@
   };
 
   Helpers.Dec2Bin = function(n) {
-    if (!Helpers.checkDec(n) || n < 0) {
+    if (!Helpers.checkDec(n)) {
       return 0;
+    }
+    if (n < 0) {
+      n = n & 0x0f;
     }
     return n.toString(2);
   };
