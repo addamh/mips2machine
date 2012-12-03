@@ -25,13 +25,13 @@ buildMachine = function(str, opts) {
     // Ignore comment blocks
     var re = new RegExp("^\/.+\/$", "g");
     if(re.test(value) == true || value.length == 0){ return true; }
-    command_array.push(value)
+    command_array.push(value.replace(/( --|--).+$/, "").trim())
   });
   
   $.each(command_array, function(index, value) {
     pieces = value.split(" ");
     pattern = /^\$|^R|^r/g;
-    console.log(value);
+    //console..log(value);
     if(value === "nop"){ 
       output_string = output_string + "00000000\n00000000\n"; 
     }
@@ -98,7 +98,7 @@ buildMachine = function(str, opts) {
       }
       
       imm = parseInt(pieces[3]);
-      console.log("IMM: "+imm);
+      //console..log("IMM: "+imm);
       if(imm % 1 != 0){
         throw new UnsupportedError(rt + " is not a number on " + value);
       }
@@ -158,9 +158,9 @@ buildMachine = function(str, opts) {
       offset_1 = address_bin.substring(0,4);
       offset_2 = address_bin.substring(4,8);
       offset_3 = address_bin.substring(8,12);
-      console.log(offset_1);
-      console.log(offset_2);
-      console.log(offset_3);
+      //console..log(offset_1);
+      //console..log(offset_2);
+      //console..log(offset_3);
       bin_command = offset_2+offset_3+"\n"+op_bin+offset_1+"\n";
 
       output_string = output_string + bin_command;
