@@ -26,6 +26,7 @@
     editor.renderer.setShowPrintMargin(false);
     editor.renderer.setHScrollBarAlwaysVisible(false);
     editor.renderer.setShowGutter(true);
+
     if (options.readonly) {
       editor.setReadOnly(true);
     }
